@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Feedback</h2>
+
+    {% if success %}
+        <div class="alert alert-success">Thank you for your feedback!</div>
+    {% endif %}
+
+    <form method="POST">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your Name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Your Email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Message</label>
+            <textarea name="message" placeholder="Your feedback" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #e0f7fa, #e1bee7);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    .support-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2, h3 {
+        color: #2c3e50;
+    }
+</style>
+
+<div class="container mt-5 support-container">
+    <h2>Support & Keylogger Awareness</h2>
+    <p class="mt-3">
+        Keyloggers are malicious programs that secretly record your keyboard activity.  
+        They can steal your passwords, banking information, and personal messages.  
+        To protect yourself:
+    </p>
+    <ul>
+        <li>Regularly scan your system with anti-malware tools.</li>
+        <li>Check your startup programs for unknown applications.</li>
+        <li>Use strong, unique passwords and enable 2FA wherever possible.</li>
+        <li>Do not download software from untrusted sources.</li>
+        <li>Keep your operating system and antivirus up-to-date.</li>
+    </ul>
+
+    <hr>
+    <h3>Contact Support</h3>
+
+    {% if success %}
+        <div class="alert alert-success">Thank you! Our team will contact you soon.</div>
+    {% endif %}
+
+    <form method="POST" class="mt-3">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your Name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email"placeholder="Your Email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Your Issue / Query</label>
+            <textarea name="issue" class="form-control" placeholder="Describe your issue" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Submit Support Request</button>
+    </form>
+</div>
+{% endblock %}

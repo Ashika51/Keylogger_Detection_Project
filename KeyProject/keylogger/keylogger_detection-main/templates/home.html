@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #e0f7fa, #e1bee7); /* Light teal to light purple */
+    }
+</style>
+
+<div class="container mt-5 text-center p-5 rounded shadow" style="background-color: rgba(255, 255, 255, 0.85);">
+    <h1 class="mb-4 text-primary">Welcome to Keylogger Detector</h1>
+    <p class="lead text-secondary">
+        Protect your system from hidden keyloggers and malicious monitoring tools.
+    </p>
+
+    <!-- Center Image -->
+    <img src="{{ url_for('static', filename='images/security.jpg') }}" 
+         class="img-fluid my-4 rounded shadow-lg" 
+         style="max-width: 250px;" alt="Security Image">
+
+    <!-- Login Button -->
+    <div class="mt-4">
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-5">
+            🔐 Login
+        </a>
+    </div>
+
+    <!-- Awareness Text -->
+    <div class="mt-5">
+        <h3 class="text-success">Why Use This Tool?</h3>
+        <p class="text-muted">
+            Our Keylogger Detector helps identify and remove hidden keyloggers that 
+            could steal your passwords and personal data. Stay protected and secure!
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.dark-theme {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px #074a42;
+  backdrop-filter: blur(8px);
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  box-shadow: 0 0 30px #00ffe0;
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  font-size: 2.5rem;
+  color: #00ffe0;
+  margin-bottom: 1rem;
+}
+
+.login-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: white;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #00ffe0;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #00ccb3;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.login-container, .dashboard-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.login-box, .card {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  max-width: 400px;
+  width: 90%;
+}
+
+.brand, .logo {
+  font-size: 2rem;
+  color: #00bfff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  background: #00bfff;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1abc9c;
+}
+
+.navbar {
+  background-color: #1e1e1e;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar nav a {
+  color: #ddd;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar nav a:hover {
+  color: #00bfff;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.carousel {
+  max-width: 90%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.slides img {
+  width: 25%;
+  gap: 5cm;
+  border-style: solid;
+  border-radius: 8px;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Make it responsive */
+@media screen and (max-width: 600px) {
+  .navbar nav a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  .brand, .logo {
+    font-size: 1.5rem;
+  }
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(0, 255, 224, 0.4);
+}
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Keylogger Detector</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Full-page background with image and overlay */
+    body {
+      background: url('https://home.sophos.com/sites/default/files/2021-09/what-is-a-keylogger.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    /* Login card styling */
+    .login-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Login button styling */
+    .btn-primary {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(to right, #00c6ff, #4facfe);
+      transform: scale(1.05);
+    }
+
+    /* Input fields style */
+    .form-control {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+    }
+    .form-control::placeholder {
+      color: #eee;
+    }
+
+    /* Login icon */
+    .login-card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    /* Simple fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <img src="what-is-a-keylogger.jpeg" alt="Login Icon">
+    <h3 class="mb-3">Login to Keylogger Detector</h3>
+    <form method="POST" action="/login">
+      <div class="mb-3">
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+  </div>
+
+</body>
+</html>

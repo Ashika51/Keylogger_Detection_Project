@@ -1,0 +1,11 @@
+  {% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Full System Scan Result</h2>
+  <pre style="background:#c6dbe6; padding:15px; border-radius:8px; max-height:500px; overflow:auto;">
+{% for line in logs %}
+{{ line }}
+{% endfor %}
+  </pre>
+</div>
+{% endblock %}
